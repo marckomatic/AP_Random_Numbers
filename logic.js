@@ -165,7 +165,7 @@ window.addEventListener('load', function()
                 stringNumero = stringNumero.substring(initNumber, lastNumber +1);
                 let numeroAcomparar = parseInt(stringNumero, 10);
                 if(numeroAcomparar <= psize && numeroAcomparar > 0){
-                    if(!(!wreplace && listaMuestra.includes(numeroAcomparar))){
+                    if(!(!wreplace && !listaMuestra.includes(numeroAcomparar))){
                         listaMuestra.push(numeroAcomparar);
                     }
                 }
