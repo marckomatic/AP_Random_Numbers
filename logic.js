@@ -69,8 +69,7 @@ function fillExampleTable(table){
 
 window.addEventListener('load', function()
 {
-    console.log("Hola esto es un");
-
+    
     var form = document.querySelector("#formulario");
     form.addEventListener("submit", function()
     {
@@ -133,11 +132,11 @@ window.addEventListener('load', function()
         }
         let listaMuestra = [];
         for(let fila of tablaNumAletarios){
-            if(listaMuestra.length > msize){
+            if(listaMuestra.length == msize){
                 break;
             }
             for(let numeroEnCelda of fila){
-                if(listaMuestra.length > msize){
+                if(listaMuestra.length == msize){
                     break;
                 }
                 let numeroCifrasCelda = 0;
@@ -165,7 +164,10 @@ window.addEventListener('load', function()
                 stringNumero = stringNumero.substring(initNumber, lastNumber +1);
                 let numeroAcomparar = parseInt(stringNumero, 10);
                 if(numeroAcomparar <= psize && numeroAcomparar > 0){
-                    if(!(!wreplace && !listaMuestra.includes(numeroAcomparar))){
+                    if(!wreplace && !listaMuestra.includes(numeroAcomparar)){
+                        listaMuestra.push(numeroAcomparar);
+                    }
+                    else if(wreplace){
                         listaMuestra.push(numeroAcomparar);
                     }
                 }
@@ -173,7 +175,9 @@ window.addEventListener('load', function()
 
         }
         
+
         var tableRef = document.getElementById('mytable2').getElementsByTagName('tbody')[0];
+        tableRef.innerHTML = '';
         for(let numero of listaMuestra){
             let newRow = tableRef.insertRow();
             var newCell = newRow.insertCell();
