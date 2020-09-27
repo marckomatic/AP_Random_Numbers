@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>APN Numeros Aleatorios</title>
+    </head> 
+    <body>
+        <h1>Obten tus numeros aleatorios</h1>
+        <form id="formulario" onsubmit="return false;" method="POST">
+            <label for='msize'>Tamaño de la muestra:</label>
+            <input type="number" name="msize" id="msize">
+            <br>
+            <label for='psize'>Tamaño de la poblacion:</label>
+            <input type="number" name="psize" id="psize">
+            <br>
+            <label for='initNumber'>No. Digito donde empezara el numero aleatorio:</label>
+            <input type="number" name="initNumber" id="initNumber">
+            <label>(El primer indice seleccionable es 0 y el ultimo es 3)</label>
+            <br>
+            <label for='lastNumber'>No. Digito donde terminara el numero aleatorio:</label>
+            <input type="number" name="lastNumber" id="lastNumber">
+            <br>
+            <label for='wreplace'>Muestra con reemplazo:</label>
+            <input type="checkbox" name="wreplace" id="wreplace">
+            <br>
+            <br>
+            <input type="submit"  value="Obtener" id="submit">
+        </form>
+        <div class='resultado'>
+
+        </div>
+        
+        <h2>Numeros aleatorios generados:</h2>
+        <table border="1px" id='mytable2'>
+            <tbody>
+
+            </tbody>
+        </table>
+
+        <h2>Tabla utilizada</h2>
+
+        <table border="1px" id='mytable'>
+            <tbody>
+            </tbody>
+        </table>
+
+        <script src="logic.js"></script>
+
+    </body>
+</html>
