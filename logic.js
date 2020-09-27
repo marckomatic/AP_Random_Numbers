@@ -131,11 +131,14 @@ window.addEventListener('load', function()
             return false;
         }
         let listaMuestra = [];
-        for(let fila of tablaNumAletarios){
+        let numeroColumnas = tablaNumAletarios[0].length;
+        let numeroFilas = tablaNumAletarios.length;
+        for(let i = 0; i < numeroColumnas; i++){
             if(listaMuestra.length == msize){
                 break;
             }
-            for(let numeroEnCelda of fila){
+            for(let j = 0; j <  numeroFilas; j++){
+                let numeroEnCelda = tablaNumAletarios[j][i];
                 if(listaMuestra.length == msize){
                     break;
                 }
